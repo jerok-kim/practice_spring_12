@@ -7,6 +7,7 @@ public class BlackListFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        // x-www-form-urlencoded -> username=jerok
         String username = request.getParameter("username");
         if (username.equals("black")) {
             // DS보다 먼저 작동한다.
